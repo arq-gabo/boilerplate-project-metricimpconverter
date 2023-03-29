@@ -48,7 +48,11 @@ function ConvertHandler() {
     let unitFromInput = input.slice(divideNumUnit(input));
 
     if (validRegexPattern.test(unitFromInput)) {
-      result = unitFromInput.toLowerCase();
+      if (unitFromInput.toLowerCase() === "l") {
+        result = "L";
+      } else {
+        result = unitFromInput.toLowerCase();
+      }
     } else {
       result = false;
     }
@@ -79,7 +83,7 @@ function ConvertHandler() {
     const miToKm = 1.60934;
     let result;
 
-    if (initUnit === "l") {
+    if (initUnit === "L") {
       result = initNum / galToL;
     } else if (initUnit === "gal") {
       result = initNum * galToL;
