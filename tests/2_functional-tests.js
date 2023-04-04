@@ -20,9 +20,8 @@ suite("Functional Tests", function () {
         assert.equal(res.body.returnNum, 2.64172);
         assert.equal(res.body.returnUnit, "gal");
         assert.equal(res.body.string, "10 liters converts to 2.64172 gallons");
+        done();
       });
-
-    done();
   });
 
   // 2
@@ -33,9 +32,8 @@ suite("Functional Tests", function () {
       .end(function (err, res) {
         assert.equal(res.status, 400);
         assert.equal(res.text, "invalid unit");
+        done();
       });
-
-    done();
   });
 
   // 3
@@ -46,9 +44,8 @@ suite("Functional Tests", function () {
       .end(function (err, res) {
         assert.equal(res.status, 400);
         assert.equal(res.text, "invalid number");
+        done();
       });
-
-    done();
   });
 
   // 4
@@ -59,9 +56,8 @@ suite("Functional Tests", function () {
       .end(function (err, res) {
         assert.equal(res.status, 400);
         assert.equal(res.text, "invalid number and unit");
+        done();
       });
-
-    done();
   });
 
   // 5
@@ -76,7 +72,7 @@ suite("Functional Tests", function () {
         assert.equal(res.body.returnNum, 2.20462);
         assert.equal(res.body.returnUnit, "lbs");
         assert.equal(res.body.string, "1 kilograms converts to 2.20462 pounds");
+        done();
       });
-    done();
   });
 });
